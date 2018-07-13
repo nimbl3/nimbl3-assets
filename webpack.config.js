@@ -33,7 +33,7 @@ const config = {
             }, {
                 loader: "sass-loader"
             }]
-      }     
+      }
     ]
   },
   plugins: [
@@ -48,7 +48,7 @@ const config = {
     }),
   ],
   devServer: {
-    contentBase: [path.resolve(__dirname, "./dist/assets/images"), path.resolve(__dirname, "./build/contracts")],
+    contentBase: [path.resolve(__dirname, "./dist/assets/images"), path.resolve(__dirname, "./build")],
     compress: true,
     port: 12000,
     stats: 'errors-only',

@@ -23,7 +23,7 @@ var App = {
   },
 
   initContract: () => {
-    $.getJSON('AssetManager.json', function(data) {
+    $.getJSON('contracts/AssetManager.json', function(data) {
       const truffleContract = require('truffle-contract')
       App.contracts.AssetManager = truffleContract(data);
       App.contracts.AssetManager.setProvider(App.web3Provider);
@@ -55,7 +55,7 @@ var App = {
 
     const slug = $("input[name=slug]").val();
     const name = $("input[name=name]").val();
-    
+
     App.AssetManager.addAsset(slug, name, { from: App.account })
     .then((result) => {
       $(e.currentTarget)[0].reset();

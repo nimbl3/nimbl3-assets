@@ -11,7 +11,8 @@
     "dev": "./node_modules/.bin/webpack-dev-server",
     "build": "./node_modules/.bin/webpack --mode development",
     "build:prod": "./node_modules/.bin/webpack -p --mode production",
-    "watch": "./node_modules/.bin/webpack --watch"
+    "watch": "./node_modules/.bin/webpack --watch",
+    "deploy": "truffle migrate --network rinkeby && npm run build:prod && surge --project ./build --domain nimbl3-assets-daap.surge.sh"
   },
   "author": "",
   "license": "ISC",
@@ -36,6 +37,7 @@
   "dependencies": {
     "truffle": "^4.1.13",
     "truffle-contract": "^3.0.6",
+    "truffle-hdwallet-provider": "0.0.6",
     "web3": "^1.0.0-beta.34"
   }
 }
