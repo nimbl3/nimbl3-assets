@@ -37,7 +37,7 @@ const config = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['src/assets']),
+    new CleanWebpackPlugin(['src/assets', 'index.html']),
     //html-webpack-plugin instantiation
     new HtmlWebpackPlugin({
       template: 'index.html'

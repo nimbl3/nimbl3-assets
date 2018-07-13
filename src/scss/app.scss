@@ -1,6 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 
 $grey: #adc5ce;
+$green: #cae1ea;
 
 body {
   padding: 5rem;
@@ -10,8 +11,22 @@ body > .container {
   margin: auto;
 }
 
-.side-body {
+.new-asset-panel {
   padding: 1rem;
   border-radius: 0.4rem;
   background: $grey;
+}
+
+.list-asset {
+  list-style: none;
+
+  li {
+    padding: 1rem;
+    background: $green;
+    border-radius: 0.4rem;
+
+    & + li {
+      margin-top: 1rem;
+    }
+  }
 }
