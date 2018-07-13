@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack')
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -41,15 +42,19 @@ const config = {
     new HtmlWebpackPlugin({
       template: 'index.html'
     }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    }),
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, "./dist/assets/images"),
+    contentBase: [path.resolve(__dirname, "./dist/assets/images"), path.resolve(__dirname, "./build/contracts")],
     compress: true,
     port: 12000,
     stats: 'errors-only',
     open: true
   },
-  devtool: 'inline-source-map'
+  devtool: 'source-map'
 };
 
 module.exports = config;

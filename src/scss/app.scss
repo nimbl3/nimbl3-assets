@@ -1,7 +1,17 @@
 @import "~bootstrap/scss/bootstrap";
 
-$primary: green;
+$grey: #adc5ce;
 
-h1 {
-  color: $primary;
+body {
+  padding: 5rem;
+}
+
+body > .container {
+  margin: auto;
+}
+
+.side-body {
+  padding: 1rem;
+  border-radius: 0.4rem;
+  background: $grey;
 }
